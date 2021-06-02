@@ -1,1 +1,5 @@
 <p>marvel-character works!</p>
+
+<p *ngFor="let character of characters | async">
+    {{ character.id | json}}
+</p>
