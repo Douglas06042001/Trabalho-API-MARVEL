@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class MarvelCharacterService {
-  API_URL = 'https://gateway.marvel.com/v1/public/characters?ts=16185334990410&apikey=f819f3621f81dde7edc382743d93d41c&hash=968c51ae154e70c54a0d0dd4fb5f405d&limit=5';
+  API_URL = 'https://gateway.marvel.com/v1/public/characters?ts=16185334990410&apikey=f819f3621f81dde7edc382743d93d41c&hash=968c51ae154e70c54a0d0dd4fb5f405d&limit=10';
 
   constructor(
     private http: HttpClient
