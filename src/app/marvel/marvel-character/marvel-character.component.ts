@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MarvelCharacterService } from '../marvel-character.service';
+import { MarvelService } from '../marvel.service';
 
 @Component({
   selector: 'app-marvel-character',
@@ -12,11 +12,25 @@ export class MarvelCharacterComponent implements OnInit {
   characters: Observable<any>
 
   constructor(
-    private MarvelCharacterService: MarvelCharacterService
+    private MarvelService: MarvelService
   ) { }
 
   ngOnInit() {
-    this.characters = this.MarvelCharacterService.getAll()
+    this.characters = this.MarvelService.getAllCharacter()
+  }
+
+  showComics(id:number){
+    console.log(id)
+  }
+
+  showEvents(id:number){
+    
+  }
+  showSeries(id:number){
+    
+  }
+  showStories(id:number){
+    
   }
 
 }
