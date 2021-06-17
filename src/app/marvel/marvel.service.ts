@@ -19,8 +19,25 @@ export class MarvelService {
       .pipe(map((data: any) => data.data.results))
   }
 
-  getComicsByCharacterId(id: number){
+  getComicsByCharacterId(id: number) {
     return this.http.get<any>(this.API_URL + `characters/${id}/comics` + this.KEY)
-    .pipe(map((data: any) => data.data.results))
+      .pipe(map((data: any) => data.data.results))
   }
+
+  getEventsByCharacterId(id: number) {
+    return this.http.get<any>(this.API_URL + `characters/${id}/events` + this.KEY)
+      .pipe(map((data: any) => data.data.results))
+  }
+
+  getSeriesByCharacterId(id: number) {
+    return this.http.get<any>(this.API_URL + `characters/${id}/series` + this.KEY)
+      .pipe(map((data: any) => data.data.results))
+  }
+
+  getStoriesByCharacterId(id: number) {
+    return this.http.get<any>(this.API_URL + `characters/${id}/stories` + this.KEY)
+      .pipe(map((data: any) => data.data.results))
+  }
+
+
 }

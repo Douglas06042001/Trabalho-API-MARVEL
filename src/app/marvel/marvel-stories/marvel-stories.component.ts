@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MarvelService } from '../marvel.service';
 
 @Component({
   selector: 'app-marvel-stories',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarvelStoriesComponent implements OnInit {
 
-  constructor() { }
+  characters
+
+  constructor(
+    private route: ActivatedRoute,
+    private MarvelService: MarvelService
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = parseInt(params['id'], 10)
+      this.characters = this.MarvelService.getStoriesByCharacterId(id)
+    })
+    this.characters.subscribe(res => console.log(res));
   }
-
 }

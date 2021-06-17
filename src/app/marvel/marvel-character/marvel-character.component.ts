@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MarvelService } from '../marvel.service';
 
@@ -12,7 +13,8 @@ export class MarvelCharacterComponent implements OnInit {
   characters: Observable<any>
 
   constructor(
-    private MarvelService: MarvelService
+    private MarvelService: MarvelService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -20,17 +22,19 @@ export class MarvelCharacterComponent implements OnInit {
   }
 
   showComics(id:number){
-    console.log(id)
+    this.router.navigate(['/comics/', id]);
   }
-
+  
   showEvents(id:number){
+    this.router.navigate(['/events/', id]);
     
   }
   showSeries(id:number){
+    this.router.navigate(['/series/', id]);
     
   }
   showStories(id:number){
-    
+    this.router.navigate(['/stories/', id]);
   }
 
 }

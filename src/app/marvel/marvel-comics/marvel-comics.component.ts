@@ -9,7 +9,7 @@ import { MarvelService } from '../marvel.service';
 })
 export class MarvelComicsComponent implements OnInit {
   
-  character
+  characters
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +19,9 @@ export class MarvelComicsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = parseInt(params['id'], 10)
-      this.character = this.MarvelService.getComicsByCharacterId(id)
+      this.characters = this.MarvelService.getComicsByCharacterId(id)
     })
-    this.character.subscribe(res => console.log(res));
+    this.characters.subscribe(res => console.log(res));
   }
 
 }
