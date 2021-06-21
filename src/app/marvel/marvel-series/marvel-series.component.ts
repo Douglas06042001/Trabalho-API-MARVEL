@@ -21,7 +21,7 @@ export class MarvelSeriesComponent implements OnInit {
       const id = parseInt(params['id'], 10)
       this.characters = this.MarvelService.getSeriesByCharacterId(id)
     })
-    this.characters.subscribe(res => console.log(res));
+    this.characters.subscribe(res => console.log(res.length));
   }
 
 }
