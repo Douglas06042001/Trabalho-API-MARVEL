@@ -1,12 +1,10 @@
-
-
 .jumbotron{
-    background-image: url('/assets/imgs/marvel.jpg');
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    background: #0b4f90;
 }
 
 .card{
     margin: 1rem;
+}   
+.dropdown-menu{
+    cursor: pointer;
 }

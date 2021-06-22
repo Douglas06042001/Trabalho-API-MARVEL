@@ -15,7 +15,7 @@ export class MarvelService {
   ) { }
 
   getAllCharacter(): Observable<any> {
-    return this.http.get<any>(this.API_URL + 'characters' + this.KEY + '&limit=50')
+    return this.http.get<any>(this.API_URL + 'characters' + this.KEY +'&limit=100')
       .pipe(map((data: any) => data.data.results))
   }
 
